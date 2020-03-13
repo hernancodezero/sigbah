@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Orden_Salida" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_NRO_DEE" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_ALMACEN_DESTINO" class="java.lang.String"/>
+	<parameter name="LISTA_ALIMENTOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="SR_RUTA_ALIMENTOS" class="java.lang.String"/>
+	<parameter name="NOMBRE_SISTEMA" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="D_VERSION_SISTEMA" class="java.lang.String"/>
+	<parameter name="LISTA_BNA" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="547" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="135" height="40" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="84" y="60" width="351" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="c8b6cea0-8e4f-4990-8835-d5dec434c604"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bienes de Ayuda Humanitaria por Emergencias]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="84" y="1" width="428" height="19" uuid="c29f23e2-a11a-4235-9d49-1e6d2c039d9b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{NOMBRE_SISTEMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="19" width="46" height="21" uuid="85ae10b6-e3b6-4ef8-96ee-2f96238950ff"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="HH:mm a">
+				<reportElement x="440" y="33" width="72" height="22" uuid="d42b8481-d826-40c5-a8eb-446f6d0ccfe9"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="440" y="19" width="72" height="21" uuid="0aade932-a36e-4fa3-a6b3-f0f8db413680"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="32" width="34" height="18" uuid="f5042480-628b-49fd-ab45-a4866c7db205"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="83" width="510" height="1" uuid="6fb846bd-236b-44e6-9f73-735a21455260">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<subreport>
+				<reportElement key="" mode="Transparent" x="0" y="121" width="513" height="200" uuid="0442e875-8e2a-4920-bb57-07d28e129b08">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_ALIMENTOS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SR_RUTA_ALIMENTOS}+"SR_Consulta_Alimentos.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="324" width="513" height="200" uuid="0c500271-fb62-4bc8-843f-dcb64c02be71">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_BNA}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SR_RUTA_ALIMENTOS}+"SR_Consulta_BNA.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="460" y="50" width="51" height="13" uuid="2acf8f47-c883-4934-811f-3b83b11f5732"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="47" width="34" height="18" uuid="747eb395-7e47-48d2-af6e-9a7ae1fd5c6f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Página:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="88" width="69" height="14" uuid="53eb3789-6104-409f-9394-224ce7555f0e"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="105" width="70" height="14" uuid="c4b86c10-0f2a-4f02-9630-6b16aee0199e"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° DEE :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="105" width="441" height="14" forecolor="#000000" uuid="a80faa01-1f3b-40c5-8529-9a1706fe10af"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NRO_DEE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="70" y="88" width="443" height="14" forecolor="#000000" uuid="136ea150-befb-45ce-a0d5-8839c4485262"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Productos distribuidos en la(s) siguiente(s) emergencia(s)."]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+</jasperReport>

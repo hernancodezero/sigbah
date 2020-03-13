@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PROG_Report_DetalleEmergenciasSINPAD" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="1.2396694214876105"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<pen lineColor="#999999"/>
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="dee"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_FECHA" class="java.lang.String"/>
+	<parameter name="P_DESCRIPCION" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_UBIGEO" class="java.lang.String"/>
+	<parameter name="P_LISTA_LOCALIDADES" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="P_NUM_SINPAD" class="java.lang.String"/>
+	<parameter name="P_LISTA_ALIMENTOS" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="P_LISTA_NO_ALIMENTOS" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_FENOMENO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<variable name="V_TOTAL" class="java.math.BigDecimal" calculation="Sum"/>
+	<title>
+		<band/>
+	</title>
+	<pageHeader>
+		<band height="200" splitType="Stretch">
+			<image>
+				<reportElement x="7" y="0" width="81" height="58" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="133" y="55" width="166" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dd8755b8-4272-4c69-9be4-1ac14d377e5f"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SINPAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="32" width="73" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hora : ]]></text>
+			</staticText>
+			<textField pattern="HH:mm">
+				<reportElement x="454" y="32" width="94" height="14" uuid="58534de9-a4b5-489b-a0ef-6c22e9565f6e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="380" y="18" width="73" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha : ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="454" y="18" width="94" height="14" uuid="58534de9-a4b5-489b-a0ef-6c22e9565f6e"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="263" y="0" width="285" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gestión de Bienes de  Ayuda Humanitaria -  SIGBAH v1.00]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="8" y="85" width="101" height="20" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="305" y="55" width="142" height="20" uuid="6979a3da-770a-4502-bdd7-42590b5b3670"/>
+				<textElement verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NUM_SINPAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="458" y="46" width="65" height="14" uuid="22ddc862-ccd6-467d-8ad0-5eac1b87a89f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="418" y="46" width="36" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Pág.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="123" width="99" height="20" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ubigeo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="85" width="424" height="20" uuid="9f52536d-a513-4556-8d9d-e1c00b822f5d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{P_DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="105" width="99" height="20" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="110" y="105" width="153" height="20" uuid="f4e94c61-da3b-487b-b2f3-03b0d2f3466d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{P_FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="125" width="220" height="20" uuid="dda65f1c-b8ef-4fc2-b7aa-68a1ce09a1b3"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{P_UBIGEO}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="75" width="555" height="1" uuid="d92c595a-e652-4523-8552-13556ef9bb21"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<subreport>
+				<reportElement x="16" y="7" width="539" height="37" uuid="0a3e8bd5-8042-499c-99fa-b4fccd7fb34e"/>
+				<dataSourceExpression><![CDATA[$P{P_LISTA_LOCALIDADES}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "PROG_Report_DetalleEmergenciasSINPAD_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50"/>
+		<band height="50"/>
+	</detail>
+	<summary>
+		<band height="20"/>
+	</summary>
+</jasperReport>

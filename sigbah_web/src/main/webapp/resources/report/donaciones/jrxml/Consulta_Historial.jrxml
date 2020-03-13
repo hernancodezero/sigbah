@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Orden_Salida" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_CODIGO_DONACION" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_ANIO" class="java.lang.String"/>
+	<parameter name="P_DDI" class="java.lang.String"/>
+	<parameter name="P_FECHA" class="java.lang.String"/>
+	<parameter name="P_ESTADO" class="java.lang.String"/>
+	<parameter name="P_NRO_DEE" class="java.lang.String"/>
+	<parameter name="P_TIPO_DONACION" class="java.lang.String"/>
+	<parameter name="P_PROCEDENCIA_DONACION" class="java.lang.String" isForPrompting="false">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="P_PAIS_PROCEDENCIA" class="java.lang.String"/>
+	<parameter name="P_TIPO_PERSONA" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="P_DONANTE" class="java.lang.String"/>
+	<parameter name="P_REPRESENTANTE" class="java.lang.String">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="P_FINALIDAD" class="java.lang.String"/>
+	<parameter name="P_NOMBRE_SISTEMA" class="java.lang.String"/>
+	<parameter name="LISTA_PRODUCTOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="SR_RUTA_PRODUCTOS" class="java.lang.String"/>
+	<parameter name="LISTA_PRODUCTOS_IND" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="LISTA_PRODUCTOS_ENT" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="LISTA_PRODUCTOS_INGSAL" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="LISTA_DOCUMENTOS" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="subreportePro" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subreporteInd" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subreporteEnt" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subreporteIngSal" class="net.sf.jasperreports.engine.JasperReport"/>
+	<parameter name="subreporteDoc" class="net.sf.jasperreports.engine.JasperReport"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="478">
+			<image>
+				<reportElement x="0" y="0" width="135" height="40" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<textField isBlankWhenNull="true">
+				<reportElement x="38" y="74" width="429" height="19" uuid="9de16b4c-cd7d-4d16-95ed-0b3eb12d54d9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CÓDIGO: "+$P{P_CODIGO_DONACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="146" y="47" width="234" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="c8b6cea0-8e4f-4990-8835-d5dec434c604"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DONACIONES]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="84" y="1" width="428" height="19" uuid="c29f23e2-a11a-4235-9d49-1e6d2c039d9b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NOMBRE_SISTEMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="19" width="46" height="21" uuid="85ae10b6-e3b6-4ef8-96ee-2f96238950ff"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="HH:mm a">
+				<reportElement x="420" y="33" width="92" height="22" uuid="d42b8481-d826-40c5-a8eb-446f6d0ccfe9"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="420" y="19" width="92" height="21" uuid="0aade932-a36e-4fa3-a6b3-f0f8db413680"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="32" width="34" height="18" uuid="f5042480-628b-49fd-ab45-a4866c7db205"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="100" width="510" height="1" uuid="6fb846bd-236b-44e6-9f73-735a21455260">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="110" width="512" height="15" backcolor="#E6E6E6" uuid="93035b55-8f9c-45ea-af82-642d965c1994">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[I. Datos Generales]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="130" width="30" height="13" uuid="4a6d8f9a-6688-4e0d-aabe-1d00dd9b2989"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="130" width="30" height="13" uuid="17b71183-a4d0-4e7e-86c6-e17f3b4ddf71"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DDI:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="256" y="130" width="47" height="13" uuid="24313269-9883-4a21-ae65-e62bd224871c"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="370" y="130" width="47" height="13" uuid="e3b4f18f-1208-4bdb-8afc-3d8ac2a9916b"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="150" width="47" height="13" uuid="21d74a58-b1a8-48df-9327-d0d883415148"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° DEE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="170" width="100" height="13" uuid="8208e5c5-126f-4219-b09b-5480bcb3c77e"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Donación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="200" width="513" height="15" backcolor="#E6E6E6" uuid="f6055880-95a6-4c39-bbc2-c386511bde9f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[II. Datos del Donante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="220" width="119" height="13" uuid="fde2b12b-eb48-4b2b-86dd-15c0a7932e8c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Procedencia Donación:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="271" width="80" height="13" uuid="8529784a-5cef-45f1-99ab-7fd15c880206"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Representante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="219" width="93" height="13" uuid="2ff6845d-9428-4dfd-aa91-90fbdcd63e51"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[País Procedencia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="237" width="89" height="13" uuid="52328282-7539-442c-b5f9-cc96d46b7452">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Persona:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="254" width="49" height="13" uuid="5bc0bb12-8130-4c24-8ee2-fb51aa940aa7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Donante:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="287" width="50" height="13" uuid="d3cc0ebc-c92a-4031-8c51-9af0c0265fc8">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Finalidad:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="28" y="130" width="54" height="13" uuid="b1e383f8-587b-4b2f-9a9b-1f62dfc3923f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ANIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="128" y="130" width="110" height="13" uuid="3e130fd5-976e-4a03-a553-e9f940f28832">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_DDI}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="301" y="130" width="54" height="13" uuid="32c9ae61-7fb2-4195-bcf1-5f3230c5c8c8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="150" width="254" height="13" uuid="8a13c5e1-8e70-4b49-a20b-e2f8e598de39">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NRO_DEE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="98" y="170" width="202" height="13" uuid="e026f05b-5088-4534-b428-cd3f351b36e3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_TIPO_DONACION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="1" y="300" width="512" height="13" uuid="f27ad985-31fd-429a-9582-423e4c655826">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_FINALIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="48" y="254" width="300" height="13" uuid="0ec91367-16dd-47b6-a077-8e1cd214e755">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_DONANTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="118" y="220" width="166" height="13" uuid="50b48e2e-f732-4413-82b3-0c19049e993f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROCEDENCIA_DONACION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="88" y="237" width="196" height="13" uuid="fea68048-2ba8-49c3-a292-252fcb5a66fa">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_TIPO_PERSONA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="130" width="72" height="13" uuid="ced96384-aa10-4a2f-ac1b-53fd6037859d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ESTADO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="78" y="271" width="270" height="13" uuid="cfea7c33-c6cf-4be0-a700-37e2f98345a1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_REPRESENTANTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="219" width="130" height="13" uuid="1a2753d4-ff82-4ed1-b641-d41aced88a80">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PAIS_PROCEDENCIA}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement key="" positionType="Float" mode="Transparent" x="0" y="420" width="513" height="20" uuid="eda677a0-b676-4617-af7a-beabb9882482">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_PRODUCTOS_INGSAL}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subreporteIngSal}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement key="" positionType="Float" mode="Transparent" x="0" y="450" width="513" height="27" uuid="b16c0d81-2e89-44af-ad2e-da6fab3afd82">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_DOCUMENTOS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subreporteDoc}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement key="" positionType="Float" mode="Transparent" x="0" y="330" width="513" height="23" uuid="9fdd31d3-a80a-43b2-ac65-9b54ed92d38b">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_PRODUCTOS}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subreportePro}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement key="" positionType="Float" mode="Transparent" x="0" y="360" width="513" height="28" uuid="36a0f163-e86d-4578-961e-dd41369a03fa">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_PRODUCTOS_IND}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subreporteInd}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement key="" positionType="Float" mode="Transparent" x="0" y="390" width="513" height="29" uuid="c441c306-2b61-47a1-987a-30eeab42b977">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{LISTA_PRODUCTOS_ENT}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{subreporteEnt}]]></subreportExpression>
+			</subreport>
+		</band>
+	</title>
+</jasperReport>

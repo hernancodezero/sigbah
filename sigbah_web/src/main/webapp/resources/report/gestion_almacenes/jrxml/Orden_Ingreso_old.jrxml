@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Orden_Ingreso" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_NRO_ORDEN_INGRESO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_ANIO" class="java.lang.String"/>
+	<parameter name="P_DDI" class="java.lang.String"/>
+	<parameter name="P_ALMACEN" class="java.lang.String"/>
+	<parameter name="P_FECHA_EMISION" class="java.lang.String"/>
+	<parameter name="P_TIPO_MOVIMIENTO" class="java.lang.String"/>
+	<parameter name="P_ALMACEN_ORIGEN" class="java.lang.String"/>
+	<parameter name="P_NRO_ORDEN_COMPRA" class="java.lang.String"/>
+	<parameter name="P_CONCEPTO" class="java.lang.String"/>
+	<parameter name="P_PROVEEDOR" class="java.lang.String"/>
+	<parameter name="P_RESPONSABLE" class="java.lang.String"/>
+	<parameter name="P_OBSERVACION" class="java.lang.String"/>
+	<parameter name="P_IDE_INGRESO" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="235" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="135" height="40" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="122" y="115" width="35" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DDI :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="589" y="115" width="68" height="14" uuid="b95b10d6-a867-44d2-92fc-6a60b8e0324c"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="159" y="115" width="104" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_DDI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="218" y="40" width="234" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="dd8755b8-4272-4c69-9be4-1ac14d377e5f"/>
+				<textElement textAlignment="Right">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ORDEN DEss INGRESO N° ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="454" y="40" width="180" height="19" uuid="9de16b4c-cd7d-4d16-95ed-0b3eb12d54d9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NRO_ORDEN_INGRESO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="318" y="115" width="73" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Almacén : ]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="393" y="115" width="146" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ALMACEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="141" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Movimiento :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="166" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° Orden de Compra :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="159" y="141" width="280" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_TIPO_MOVIMIENTO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="159" y="166" width="159" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NRO_ORDEN_COMPRA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="659" y="115" width="105" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_FECHA_EMISION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="115" width="35" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Año :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="56" y="115" width="66" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ANIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="439" y="141" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Almacen Origen :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="579" y="141" width="146" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_ALMACEN_ORIGEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="318" y="166" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Concepto :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="458" y="166" width="304" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_CONCEPTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="18" y="200" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre Proveedor :]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="158" y="200" width="159" height="14" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_PROVEEDOR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="130" splitType="Stretch">
+			<subreport>
+				<reportElement mode="Transparent" x="0" y="0" width="802" height="38" uuid="be37837d-9367-4c49-a656-9f7e4002e0a9"/>
+				<subreportParameter name="P_IDE_INGRESO">
+					<subreportParameterExpression><![CDATA[$P{P_IDE_INGRESO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "Detalle_Orden_Ingreso.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="152">
+			<line>
+				<reportElement x="16" y="124" width="187" height="1" uuid="e5b736c1-9138-4add-86fd-88929f915daf"/>
+			</line>
+			<staticText>
+				<reportElement x="16" y="126" width="187" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Responsable Abastecimiento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="125" width="153" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jefe Almacén]]></text>
+			</staticText>
+			<line>
+				<reportElement x="249" y="123" width="153" height="1" uuid="e5b736c1-9138-4add-86fd-88929f915daf"/>
+			</line>
+			<staticText>
+				<reportElement x="451" y="125" width="159" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[ Responsable Almacén]]></text>
+			</staticText>
+			<line>
+				<reportElement x="452" y="122" width="158" height="1" uuid="e5b736c1-9138-4add-86fd-88929f915daf"/>
+			</line>
+			<staticText>
+				<reportElement x="659" y="126" width="136" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha]]></text>
+			</staticText>
+			<line>
+				<reportElement x="650" y="122" width="150" height="1" uuid="e5b736c1-9138-4add-86fd-88929f915daf"/>
+			</line>
+			<rectangle>
+				<reportElement x="0" y="20" width="802" height="45" uuid="13936196-78e4-46c7-bb63-89d920037b92"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="4" y="25" width="795" height="36" forecolor="#000000" uuid="0324f602-6035-4fd9-b52d-ff6af27fa4a8"/>
+				<textElement textAlignment="Justified" markup="none">
+					<font isBold="false" isUnderline="false" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_OBSERVACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="139" height="14" uuid="f254e6b1-0fb4-4f89-8154-2f139d06a141"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observación :]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30"/>
+	</summary>
+</jasperReport>

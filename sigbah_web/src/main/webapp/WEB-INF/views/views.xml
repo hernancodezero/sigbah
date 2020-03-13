@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+	"http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="login" extends="login-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/seguridad/login.jsp" />
+	</definition>
+
+	<definition name="principal" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/seguridad/principal.jsp" />
+	</definition>
+	
+	<definition name="dataAccessFailure" extends="public-layout">
+		<put-attribute name="regionBody" value="/WEB-INF/views/default/dataAccessFailure.jsp" />
+	</definition>
+
+	<definition name="resourceNotFound" extends="public-layout">
+		<put-attribute name="regionBody" value="/WEB-INF/views/default/resourceNotFound.jsp" />
+	</definition>
+
+	<definition name="uncaughtException" extends="public-layout">
+		<put-attribute name="regionBody" value="/WEB-INF/views/default/uncaughtException.jsp" />
+	</definition>
+	
+	<definition name="uncaughtExceptionLogin" extends="public-layout">
+		<put-attribute name="regionBody" value="/WEB-INF/views/default/uncaughtExceptionLogin.jsp" />
+	</definition>
+
+	<definition name="listar_control_calidad" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_ControlCalidad.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_control_calidad" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Mostrar_ControlCalidad.jsp" />
+	</definition>
+	
+	<definition name="listar_orden_ingreso" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_OrdenIngreso.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_orden_ingreso" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_OrdenIngreso.jsp" />
+	</definition>
+	
+	<definition name="listar_orden_salida" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_OrdenSalida.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_orden_salida" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_OrdenSalida.jsp" />
+	</definition>
+	
+	<definition name="listar_proyecto_manifiesto" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_ProyectoManifiesto.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_proyecto_manifiesto" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_ProyectoManifiesto.jsp" />
+	</definition>
+	
+	<definition name="listar_guia_remision" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_GuiaRemision.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_guia_remision" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_GuiaRemision.jsp" />
+	</definition>
+	
+	<definition name="listar_stock_almacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Stock.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_stock_almacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_StockAlmacen.jsp" />
+	</definition>
+	
+	<definition name="listar_cartilla_inventario" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_CartillaInventario.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_cartilla_inventario" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_CartillaInventario.jsp" />
+	</definition>
+	
+	<definition name="listar_cierre_stock" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Cierre_Stock.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento_cierre_stock" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Registrar_Cierre_Stock.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_almacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_Logistica.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_proyecto" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_Proyecto.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_salida" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_Salida.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_ingreso" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_Ingreso.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_guia" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_Guia.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_siga" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Reportes_SIGA.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-stock-almacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Consulta_Stock_Almacen.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-historial-almacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Consulta_Historial_Almacen.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-historial-almacen-s" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Consulta_Historial_Almacen_S.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-productos-fecha" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/gestion_almacenes/ALM_Listar_Consulta_Productos_Fecha.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_PropuestaDonaciones.jsp" />
+	</definition>
+		
+	<definition name="mantenimiento_donaciones" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Mostrar_PropuestaDonaciones.jsp" />
+	</definition>
+
+	<definition name="listar-donaciones-ingreso" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Orden_Ingreso.jsp" />
+	</definition>
+	
+	<definition name="registrar-donaciones-ingreso" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registro_Orden_Ingreso.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones-salida" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Orden_Salida.jsp" />
+	</definition>
+	
+	<definition name="registrar-donaciones-salida" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registro_Orden_Salida.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones-guia" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Guia_Remision.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento-guia-remision-donacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registrar_GuiaRemision.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones-stock" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Stock.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento-stock-donacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registrar_Stock.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-productos" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Consulta_Productos.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-resoluciones" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Consulta_Resoluciones.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones-cartilla" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_CartillaInventario.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento-cartilla-donacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registrar_CartillaInventario.jsp" />
+	</definition>
+	
+	<definition name="listar-donaciones-cierre" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Cierre_Stock.jsp" />
+	</definition>
+	
+	<definition name="mantenimiento-cierre-donacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Registrar_Cierre_Stock.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-stock" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Consulta_Stock.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-historial" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Consulta_Historial.jsp" />
+	</definition>
+	
+	<definition name="listar-consulta-kardex" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Listar_Consulta_Kardex.jsp" />
+	</definition>
+	
+	<definition name="emergencias-sinpad" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Listar_EmergenciasSINPAD.jsp" />
+	</definition>
+	<definition name="mantenimiento_emergencias-sinpad" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Mostrar_DetalleEmergenciasSINPAD.jsp" />
+	</definition>
+	<definition name="requerimiento-edan" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Listar_RequerimientoEDAN.jsp" />
+	</definition>
+	<definition name="mantenimiento_requerimiento" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Registrar_RequerimientoEDAN.jsp" />
+	</definition>
+	<definition name="racion-operativa" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Listar_RacionOperativa.jsp" />
+	</definition>
+		<definition name="mantenimiento_racion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Registrar_RacionOperativa.jsp" />
+	</definition>
+	<definition name="listar_programacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Listar_Programacion.jsp" />
+	</definition>
+	<definition name="mantenimiento_programacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Registrar_Programacion.jsp" />
+	</definition>
+	<definition name="pedido-compra" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Listar_PedidoCompra.jsp" />
+	</definition>
+	<definition name="mantenimiento-pedido-compra" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_RegistrarPedidoCompra.jsp" />
+	</definition>
+	<definition name="decreto-estado" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_ListarDEE.jsp" />
+	</definition>
+	<definition name="mantenimiento-decreto-estado" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_RegistrarDEE.jsp" />
+	</definition>
+	<definition name="consulta-programacion" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Consulta_Programacion.jsp" />
+	</definition>
+	<definition name="consulta-pedido" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/programacion_bah/PROG_Consulta_PedidoCompra.jsp" />
+	</definition>
+	
+	
+	<definition name="listar-tablas" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Tablas.jsp" />
+	</definition>
+	<definition name="listar-tablas-generales" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Tablas_Generales.jsp" />
+	</definition>
+	<definition name="listar-tablas-ddi" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Tablas_Ddi.jsp" />
+	</definition>
+	<definition name="registrar-tablas-generales" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Registrar_Tablas_Generales4.jsp" />
+	</definition>
+	
+	<definition name="listar-usuarios" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Usuarios.jsp" />
+	</definition>
+	<definition name="registrar-usuarios" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Registrar_Usuarios.jsp" />
+	</definition>
+	<definition name="listar-roles" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Roles.jsp" />
+	</definition>
+	
+	<definition name="listar-catalogo-productos" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Catalogo_Productos.jsp" />
+	</definition>
+	<definition name="registrar-catalogo-productos" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Registrar_Catalogo_Productos.jsp" />
+	</definition>
+	<definition name="registrar-catalogo-productos-siga" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Registrar_Catalogo_Productos_SIGA.jsp" />
+	</definition>
+	
+	<definition name="listar-correos" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/administracion/ADM_Listar_Correos.jsp" />
+	</definition>
+	
+	<definition name="noAlmacen" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/seguridad/noAlmacen.jsp" />
+	</definition>
+	
+	<definition name="mesNoAbierto" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/seguridad/mesNoAbierto.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_salida_don" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Reportes_Salida.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_ingreso_don" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Reportes_Ingreso.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_guia_don" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Reportes_Guia.jsp" />
+	</definition>
+	
+	<definition name="listar_reportes_siga_don" extends="principal-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/donaciones/DON_Reportes_SIGA.jsp" />
+	</definition>
+	
+	
+	<definition name="testAlmacenStock" extends="public-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/test/testAlmacenStock.jsp" />
+	</definition>
+	
+	<definition name="testCategoriaStock" extends="public-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/test/testCategoriaStock.jsp" />
+	</definition>
+	
+	<definition name="testProductoStock" extends="public-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/test/testProductoStock.jsp" />
+	</definition>
+	
+	<definition name="testAlmacenes" extends="public-layout">
+	    <put-attribute name="regionBody" value="/WEB-INF/views/test/testAlmacenStock.jsp" />
+	</definition>
+	
+	<definition name="viewManual" extends="public-layout">
+	    <put-attribute name="regionResources" value="/WEB-INF/views/manual_online/inicio.jsp" />
+	</definition>
+	
+</tiles-definitions>

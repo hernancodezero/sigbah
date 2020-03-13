@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="PROG_Report_DetalleEmergenciasSINPAD_subreport1" pageWidth="555" pageHeight="802" whenNoDataType="NoPages" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fb6d65ea-efc6-47e6-89f0-e8e8a517e25a">
+	<property name="ireport.zoom" value="1.4641000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box padding="1">
+			<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+		</box>
+	</style>
+	<parameter name="P_LISTA_LOCALIDADES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="desDepartamento" class="java.lang.String"/>
+	<field name="desProvincia" class="java.lang.String"/>
+	<field name="desDistrito" class="java.lang.String"/>
+	<field name="desCentroPoblado" class="java.lang.String"/>
+	<field name="famAfectado" class="java.lang.Integer"/>
+	<field name="famDamnificado" class="java.lang.Integer"/>
+	<field name="totalFam" class="java.lang.Integer"/>
+	<field name="persoAfectado" class="java.lang.Integer"/>
+	<field name="persoDamnificado" class="java.lang.Integer"/>
+	<field name="totalPerso" class="java.lang.Integer"/>
+	<variable name="V_TOTAL" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{totalPerso}]]></variableExpression>
+		<initialValueExpression><![CDATA[0]]></initialValueExpression>
+	</variable>
+	<background>
+		<band height="50"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<rectangle>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="3" width="555" height="20" forecolor="#CCCCCC" backcolor="#CCCCCC" uuid="cf6044ea-734b-47ae-9e28-65384a29dd89"/>
+			</rectangle>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="26" y="6" width="507" height="14" uuid="e67144ff-ab97-4702-9ab5-157b4a01833c"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Localidades]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="1" y="36" width="32" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="6187c741-b473-49bd-b74c-81426ec0eddd"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="33" y="36" width="60" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Departamento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="93" y="36" width="60" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Provincia]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="153" y="36" width="60" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Distrito]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="213" y="36" width="60" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Localidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="273" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fam. Afect.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="320" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Fam. Dam.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="367" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Total Fam.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="414" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Pers. Afect.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="461" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Pers. Dam.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="table" mode="Transparent" x="508" y="36" width="47" height="25" forecolor="#000000" backcolor="#FFFFFF" uuid="5e4aa36c-2b32-4964-bcb3-6ef53c66d7b1"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Total Pers.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<textField>
+				<reportElement style="table" mode="Transparent" x="1" y="0" width="32" height="18" forecolor="#666666" uuid="15225536-f3d1-4c61-8e23-056497933405"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="33" y="0" width="60" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desDepartamento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="93" y="0" width="60" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desProvincia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="153" y="0" width="60" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desDistrito}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="213" y="0" width="60" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{desCentroPoblado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="273" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{famAfectado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="320" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{famDamnificado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="367" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalFam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="414" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persoAfectado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="461" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{persoDamnificado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="table" mode="Transparent" x="508" y="0" width="47" height="18" forecolor="#666666" uuid="f974b2c6-7abe-4b0d-968a-de5af59fc98a"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{totalPerso}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="20">
+			<textField pattern="">
+				<reportElement style="table" x="508" y="0" width="47" height="20" forecolor="#666666" uuid="c9dcd295-f774-4574-86df-d2302e940102"/>
+				<box>
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{V_TOTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="table" x="1" y="0" width="507" height="20" forecolor="#666666" uuid="ef5570a2-d63d-4bf1-84b6-c934849b9dd6"/>
+				<box rightPadding="26">
+					<pen lineColor="#666666"/>
+					<topPen lineColor="#666666"/>
+					<leftPen lineColor="#666666"/>
+					<bottomPen lineColor="#666666"/>
+					<rightPen lineColor="#666666"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total: ]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+</jasperReport>

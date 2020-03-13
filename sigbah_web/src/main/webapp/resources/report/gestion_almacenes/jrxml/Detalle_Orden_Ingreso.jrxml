@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Control_Calidad_Alimentaria" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="P_IDE_INGRESO" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ROWNUM AS item,
+             E.NOM_PRODUCTO AS nombreProducto,
+             D.CANT_LOTE AS cantidadLote
+        FROM SINPAD.BAH_M_CONTROL_CALIDAD A
+        LEFT JOIN SINPAD.BAH_MAE_PROVEEDOR B
+          ON A.FK_IDE_PROVEEDOR = B.IDE_PROVEEDOR
+        LEFT JOIN SINPAD.BAH_MAE_ALMACEN C
+          ON A.FK_IDE_ALMACEN_OD = C.IDE_ALMACEN
+        JOIN SINPAD.BAH_D_CONTROL_CALIDAD D
+          ON A.IDE_CONTROL_CALIDAD = D.FK_IDE_CONTROL_CALIDAD
+        JOIN SINPAD.BAH_MAE_CATALOGO_PRODUCTO E
+          ON D.FK_IDE_PRODUCTO = E.IDE_PRODUCTO
+        JOIN SINPAD.BAH_MAE_DDI G
+          ON C.FK_IDE_DDI = G.IDE_DDI
+        JOIN SINPAD.BAH_MAE_TIP_CONTROL_CALIDAD H
+          ON A.FK_IDE_TIP_CONTROL = H.IDE_TIP_CONTROL
+       WHERE A.IDE_CONTROL_CALIDAD = $P{P_IDE_INGRESO}
+         AND D.FLG_ACTIVO = '1']]>
+	</queryString>
+	<field name="item" class="java.math.BigDecimal"/>
+	<field name="nombreProducto" class="java.lang.String"/>
+	<field name="cantidadLote" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="70" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="96d65713-43d6-46a8-9a9d-4dc9a1464b69" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="41" height="70" isPrintWhenDetailOverflows="true"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{item}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement uuid="3c438075-bb41-4f55-b88e-8229f20982d6" positionType="Float" stretchType="RelativeToTallestObject" x="41" y="0" width="162" height="70" isPrintWhenDetailOverflows="true"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="cb6c4feb-9314-446b-8156-7126426ac3bb" positionType="Float" stretchType="RelativeToTallestObject" x="203" y="0" width="92" height="70" isPrintWhenDetailOverflows="true"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadLote}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement uuid="cb6c4feb-9314-446b-8156-7126426ac3bb" positionType="Float" stretchType="RelativeToTallestObject" x="295" y="0" width="96" height="70" isPrintWhenDetailOverflows="true"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidadLote}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

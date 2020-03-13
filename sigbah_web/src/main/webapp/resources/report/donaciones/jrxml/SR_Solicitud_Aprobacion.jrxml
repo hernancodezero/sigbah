@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SR_Solicitud_Aprobacion" pageWidth="513" pageHeight="300" whenNoDataType="AllSectionsNoDetail" columnWidth="513" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c2653a19-94a6-478f-a7d4-90fb9804ecbf">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="D_FINALIDAD" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO1" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO2" class="java.lang.String"/>
+	<parameter name="LISTA_REGIONES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="P_LOGO_CHECK" class="java.lang.String"/>
+	<parameter name="D_ESTADO" class="java.lang.String"/>
+	<parameter name="P_LOGO_CHECKED" class="java.lang.String"/>
+	<parameter name="P_LOGO_UNCHECKED" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="nombreRegion" class="java.lang.String"/>
+	<pageHeader>
+		<band height="217" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="0" y="8" width="125" height="22" uuid="35846f35-b5dc-43b2-8b19-742bcfdf2b55"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" markup="none">
+					<font fontName="SansSerif" size="11" isBold="true" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[FINALIDAD]]></text>
+			</staticText>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement key="" positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="219" y="138" width="13" height="13" isPrintWhenDetailOverflows="true" uuid="71ab053c-d763-479c-ad29-7d1cf84aa82f"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[($P{D_ESTADO}.equals("ACEPTADA")?$P{P_LOGO_CHECKED}:$P{P_LOGO_UNCHECKED})
+]]></imageExpression>
+			</image>
+			<image hAlign="Center" vAlign="Middle">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" mode="Opaque" x="356" y="137" width="13" height="13" isPrintWhenDetailOverflows="true" uuid="5d92ca89-b462-4e11-bb35-dbd02c747812"/>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA[($P{D_ESTADO}.equals("DENEGADA")?$P{P_LOGO_CHECKED}:$P{P_LOGO_UNCHECKED})]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="248" y="137" width="102" height="15" uuid="53c9fc50-f469-4c68-8446-5c2066c1a0a0"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Donación Denegada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="137" width="105" height="15" uuid="a0d2934e-ce3d-4fbb-b9b2-b89478496348"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="8" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Donación Aceptada]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="27" width="512" height="103" isPrintWhenDetailOverflows="true" uuid="31816b07-26d2-430b-8c6b-5b8e0bfd43d2">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="9"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_FINALIDAD}+"<br><br>"+
+$P{D_BLOQUE_TEXTO1}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="155" width="512" height="40" isPrintWhenDetailOverflows="true" uuid="c2464f0f-d2d3-4e34-b3d1-3f1820a1c6cb"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_BLOQUE_TEXTO2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="195" width="155" height="22" uuid="5898325f-3371-4a6d-8a92-d4c75a586388"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CUADRO DE DISTRIBUCIÓN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="17" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="60" y="1" width="453" height="16" backcolor="#F5F5F5" uuid="3aa0b110-96ad-440c-8102-62f4703e00cb">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Región]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="1" width="60" height="16" backcolor="#F5F5F5" uuid="115d60ad-ec40-4ff7-98b5-30c65283efc9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="60" y="0" width="453" height="21" uuid="5055277c-a9a2-4905-9285-f64d84660d4b"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreRegion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="0" y="0" width="60" height="21" uuid="6a4c6936-d89f-4c69-9a4d-c0548ed3044c"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" markup="none">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

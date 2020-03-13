@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Guia_Remision" pageWidth="595" pageHeight="842" whenNoDataType="NoDataSection" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_LOGO_WFP" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_LOGO_CHECK" class="java.lang.String"/>
+	<parameter name="P_LOGO_CHECKED" class="java.lang.String"/>
+	<parameter name="D_FINALIDAD" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO1" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO2" class="java.lang.String"/>
+	<parameter name="D_FECHA_EMISION" class="java.lang.String"/>
+	<parameter name="D_NOM_DONANTE" class="java.lang.String"/>
+	<parameter name="D_NUM_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="D_OBSERVACION" class="java.lang.String"/>
+	<parameter name="D_NOMBRE_PERSONAL" class="java.lang.String"/>
+	<parameter name="D_OFICINA_RESPONSABLE" class="java.lang.String"/>
+	<parameter name="ListaProductos" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource">
+		<parameterDescription><![CDATA[]]></parameterDescription>
+	</parameter>
+	<parameter name="RUTA_JASPER" class="java.lang.String"/>
+	<field name="nombreProducto" class="java.lang.String"/>
+	<field name="unidadMedida" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Double"/>
+	<field name="monOrigen" class="java.lang.Double"/>
+	<field name="monSoles" class="java.lang.Double"/>
+	<pageHeader>
+		<band height="237" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="67" y="12" width="302" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="dd8755b8-4272-4c69-9be4-1ac14d377e5f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INSTITUTO NACIONAL DE DEFENSA CIVIL]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="67" y="31" width="314" height="20" uuid="9de16b4c-cd7d-4d16-95ed-0b3eb12d54d9"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_OFICINA_RESPONSABLE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="65" y="60" width="438" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d941c426-9084-46fd-a44e-7063eec585eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SOLICITUD DE ACEPTACIÓN DE DONACIONES A FAVOR DE INDECI]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="90" width="550" height="1" uuid="31aa76d8-94a7-4e79-a2d9-c2748650055a"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="100" width="552" height="50" uuid="5054c5fb-e9ba-4a72-9038-ac0eee3cb6b7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Con fecha "+$P{D_FECHA_EMISION}+", el Instituto Nacional de Defensa Civil, con dirección en Calle Ricardo Angulo Ramírez N°594 Urb. Córpac San Isidro, a través de la Oficina General de Tecnologías de la Información y comunicación - OGTC evalúa el ofrecimiento de donación efectuada por:"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="1" y="158" width="85" height="22" uuid="d7fea787-00d7-4e77-a5b6-5ccdaba19477"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTIDAD DONANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="183" width="85" height="22" uuid="6275ff2a-e692-4708-9604-e77f38cc7abe"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="209" width="109" height="22" uuid="71ba250c-bbfa-4ebd-ab8e-d6a4cc9ef2f4"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[BIENES A DONAR]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="162" width="215" height="21" uuid="0fe5caff-3cec-4d7b-8923-2d1c8fa3ed06"/>
+				<textFieldExpression><![CDATA[$P{D_NOM_DONANTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="185" width="214" height="23" uuid="e24cc265-bccd-4216-9260-deb54ead5415"/>
+				<textFieldExpression><![CDATA[$P{D_NUM_DOCUMENTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="14" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="288" y="0" width="81" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="62d4cb28-8f62-48e1-924f-411564827539"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="40" y="0" width="140" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="64ed57df-a6d1-4d07-90ff-666d64244858"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="40" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="6333d805-801b-4782-a58e-c4753c4baef1"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="0" width="108" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="ff867377-96ed-4b28-bbd0-865d59e10246"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[UNIDAD DE MEDIDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="93" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="81ad0913-6df8-4fb4-a010-8f7daeb19c2d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Importe Origen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="463" y="0" width="89" height="14" forecolor="#000000" backcolor="#FFFFFF" uuid="97b31f37-4dc2-4a9c-9a27-c4e2253598dd"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Importe Soles]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="40" y="0" width="140" height="20" uuid="e002c714-9e15-4fa5-bcf1-0829af360bf7"/>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="180" y="0" width="108" height="20" uuid="300fae0a-cfe1-42d5-bff4-a593aeb55acf"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{unidadMedida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="288" y="0" width="82" height="20" uuid="4de2758d-79ca-42a2-832a-5e3d2ab49e61"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="370" y="0" width="93" height="20" uuid="71157ec4-5940-482a-92a5-6bd36108c5db"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{monOrigen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement isPrintRepeatedValues="false" x="463" y="0" width="89" height="20" uuid="8c9ba257-34ec-4ea1-97f0-66b2ecf1cf52"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{monSoles}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="38" height="20" uuid="6ad0fa3b-7424-4d89-8e73-d732f76207d4"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="212">
+			<frame>
+				<reportElement x="1" y="11" width="552" height="115" uuid="2b520925-6d93-4104-9b40-0fe20258aff7"/>
+				<subreport>
+					<reportElement x="-1" y="-6" width="552" height="115" uuid="4efe29f0-de6f-4c58-bd89-f38dc5be2b46"/>
+					<dataSourceExpression><![CDATA[$P{ListaProductos}]]></dataSourceExpression>
+					<subreportExpression><![CDATA[$P{RUTA_JASPER}+"sub_repor.jasper"]]></subreportExpression>
+				</subreport>
+			</frame>
+			<line>
+				<reportElement x="190" y="195" width="148" height="1" uuid="e5b736c1-9138-4add-86fd-88929f915daf"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

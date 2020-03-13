@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Acta_Entrega_Nacional" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_LOGO_WFP" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_LOGO_CHECK" class="java.lang.String"/>
+	<parameter name="P_LOGO_CHECKED" class="java.lang.String"/>
+	<parameter name="D_FINALIDAD" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO1" class="java.lang.String"/>
+	<parameter name="D_BLOQUE_TEXTO2" class="java.lang.String"/>
+	<parameter name="D_FECHA_EMISION" class="java.lang.String"/>
+	<parameter name="D_NOM_DONANTE" class="java.lang.String"/>
+	<parameter name="D_NUM_DOCUMENTO" class="java.lang.String"/>
+	<parameter name="D_OBSERVACION" class="java.lang.String"/>
+	<parameter name="D_NOMBRE_PERSONAL" class="java.lang.String"/>
+	<parameter name="D_OFICINA_RESPONSABLE" class="java.lang.String"/>
+	<parameter name="LISTA_REGIONES" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<parameter name="SR_RUTA_REGIONES" class="java.lang.String"/>
+	<parameter name="D_CIUDAD" class="java.lang.String"/>
+	<parameter name="D_DIAS" class="java.lang.String"/>
+	<parameter name="D_MES" class="java.lang.String"/>
+	<parameter name="D_ANIO" class="java.lang.String"/>
+	<parameter name="D_NOM_ALMACEN" class="java.lang.String"/>
+	<parameter name="D_JEFE_ALMACEN" class="java.lang.String"/>
+	<parameter name="D_NOMBRE_SISTEMA" class="java.lang.String"/>
+	<parameter name="D_VERSION_SISTEMA" class="java.lang.String"/>
+	<field name="nombreProducto" class="java.lang.String"/>
+	<field name="unidadMedida" class="java.lang.String"/>
+	<field name="cantidad" class="java.lang.Double"/>
+	<field name="estadoConservacion" class="java.lang.String"/>
+	<field name="importeTotal" class="java.lang.Double"/>
+	<background>
+		<band height="760">
+			<line>
+				<reportElement x="50" y="621" width="148" height="1" uuid="a07d1c7f-d323-459b-b038-71e829c43e88"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="33" y="562" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="f446dc82-463b-4703-929a-24cc00274fd2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ENTREGUÉ CONFORME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="314" y="561" width="168" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="de58336c-b0d2-4434-8419-b6d717269556"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RECIBÍ CONFORME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="30" y="626" width="185" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="24d3ba37-7330-44c5-8747-fb8ff0b97d88"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Despachador Oficial de Aduanas]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="265" y="628" width="247" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="2772812b-fdae-420f-98ea-6c3b3b2be862"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Jefe de Almacén(o el que haga sus veces)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="20" y="646" width="214" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="4a92e481-5c32-419a-884f-d77314ba4648"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Nacional de Defensa Civil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="294" y="648" width="188" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="1ba52c69-b8c7-4f32-a47e-e7ac46c10efc"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Nacional de Defensa Civil]]></text>
+			</staticText>
+			<line>
+				<reportElement x="334" y="622" width="131" height="1" uuid="b4270feb-fb65-4f23-94f9-b54f0925dd3c"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="118" y="713" width="264" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="a49112cf-b95b-48a3-acfa-d64cfaf56241"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Veedor del OCI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="155" y="730" width="195" height="20" forecolor="#000000" backcolor="#FFFFFF" uuid="d1c107ae-63c4-49e9-9e59-abb31b682274"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Instituto Nacional de Defensa Civil]]></text>
+			</staticText>
+			<line>
+				<reportElement x="187" y="712" width="148" height="1" uuid="edd42f68-40ef-47e4-9bed-75ab7241c8ff"/>
+			</line>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="227" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="56" height="58" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="2" y="60" width="513" height="36" forecolor="#000000" backcolor="#FFFFFF" uuid="d941c426-9084-46fd-a44e-7063eec585eb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTA DE ENTREGA - RECEPCIÓN DE DONACIÓN PROVENIENTES DEL EXTERIOR]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="96" width="513" height="1" uuid="31aa76d8-94a7-4e79-a2d9-c2748650055a"/>
+			</line>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="106" width="515" height="80" uuid="5054c5fb-e9ba-4a72-9038-ac0eee3cb6b7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["En la ciudad de "+$P{D_CIUDAD}+" a los "+$P{D_DIAS}+" días del mes de "+$P{D_MES}+" de "+$P{D_ANIO}+" en el "+$P{D_NOM_ALMACEN}+" del INDECI, se procede a la recepción de los bienes donados efectuada por la "+$P{D_NOM_DONANTE}+" por parte del Despachador Oficial de aduanas del INDECI al Jefe de Almacén "+$P{D_JEFE_ALMACEN}+" del INDECI,  consignados a favor del INSTITUTO NACIONAL DE DEFENSA CIVIL (INDECI), destinada a la atención de la población damnificada y/o afectada a consecuencia de la emergencia/desastre, según sea el caso, ocurrido en el país."]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="183" width="514" height="33" uuid="28034bbe-fcda-46c0-ac15-10e618337d64"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Según Declaración Aduanera de Mercancías (DAM) N° "+$P{D_NUM_DOCUMENTO}!=null?$P{D_NUM_DOCUMENTO}:""]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="87" y="1" width="428" height="19" uuid="d418446b-5ac4-497f-ab22-10d17207aae1"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_NOMBRE_SISTEMA}+" "+$P{D_VERSION_SISTEMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="19" width="46" height="21" uuid="fe8ecefe-6986-49d8-ab65-8029ffbb455f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="HH:mm a">
+				<reportElement x="423" y="33" width="92" height="22" uuid="76e7b085-bf12-406c-a2ab-136939b76de0"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="423" y="19" width="92" height="21" uuid="18f3956b-f85e-4513-8217-ad511c4c83fb"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="32" width="34" height="18" uuid="ad9e9cfc-3082-4024-94b5-f8afdc76e51c"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="166" y="39" width="234" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="6b6d3250-734d-415f-9007-595e60af28a9"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DONACIONES]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="370" y="0" width="70" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="62d4cb28-8f62-48e1-924f-411564827539"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Valor (US$)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="40" y="0" width="194" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="64ed57df-a6d1-4d07-90ff-666d64244858"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="40" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="6333d805-801b-4782-a58e-c4753c4baef1"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="234" y="0" width="76" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="ff867377-96ed-4b28-bbd0-865d59e10246"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Unidad 
+de Medida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="440" y="0" width="75" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="81ad0913-6df8-4fb4-a010-8f7daeb19c2d"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Observación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="310" y="0" width="60" height="27" forecolor="#000000" backcolor="#F5F5F5" uuid="72601bc0-2384-484b-966a-c11eee6ca50a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" isUnderline="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="40" y="0" width="194" height="20" uuid="e002c714-9e15-4fa5-bcf1-0829af360bf7"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="234" y="0" width="76" height="20" uuid="300fae0a-cfe1-42d5-bff4-a593aeb55acf"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{unidadMedida}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###,###,###,##0.00" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="370" y="0" width="70" height="20" uuid="4de2758d-79ca-42a2-832a-5e3d2ab49e61"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{importeTotal}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="440" y="0" width="75" height="20" uuid="71157ec4-5940-482a-92a5-6bd36108c5db"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estadoConservacion}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="40" height="20" uuid="6ad0fa3b-7424-4d89-8e73-d732f76207d4"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###,###,###,##0" isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToBandHeight" x="310" y="0" width="60" height="20" uuid="271fc4b9-5625-4d58-80f7-3a4b65f5c8f2"/>
+				<box padding="1">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cantidad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="266">
+			<textField isBlankWhenNull="true">
+				<reportElement x="1" y="11" width="514" height="69" uuid="cf79943a-5bc6-48c0-9e71-271ca32c165d"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Al respecto, se hace entrega fotocopias de la documentación sustentatoria presentada en ADUANAS; sobre la nacionalización de los bienes donados, para su registro respectivo."+
+
+"En señal de conformidad se firma la presente Acta, en triplicado."]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

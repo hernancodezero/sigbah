@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE tiles-definitions PUBLIC  
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="login-layout" template="/WEB-INF/views/templates/login-layout.jsp">
+		<put-attribute name="regionResources" value="/WEB-INF/views/resourcesDefault.jsp" />
+    	<put-attribute name="regionBody" value="" />
+    	<put-attribute name="regionScripts" value="/WEB-INF/views/scriptsDefault.jsp" />
+  	</definition>
+
+	<definition name="principal-layout" template="/WEB-INF/views/templates/principal-layout.jsp">
+		<put-attribute name="regionResources" value="/WEB-INF/views/mainResources.jsp" />
+		<put-attribute name="regionTop" value="/WEB-INF/views/mainHeader.jsp" />
+		<put-attribute name="regionLeft" value="/WEB-INF/views/mainMenu.jsp" />
+		<put-attribute name="regionBody" value="" />
+		<put-attribute name="regionScripts" value="/WEB-INF/views/mainScripts.jsp" />
+		<put-attribute name="regionBottom" value="/WEB-INF/views/mainFooter.jsp" />
+	</definition>
+	
+	<definition name="public-layout" template="/WEB-INF/views/templates/default.jsp">
+		<put-attribute name="regionResources" value="/WEB-INF/views/resourcesDefault.jsp" />
+    	<put-attribute name="regionTop" value="/WEB-INF/views/mainHeader.jsp" />
+    	<put-attribute name="regionLeft" value="/WEB-INF/views/mainMenu.jsp" />
+    	<put-attribute name="regionBody" value="" />
+    	<put-attribute name="regionScripts" value="/WEB-INF/views/scriptsDefault.jsp" />
+    	<put-attribute name="regionBottom" value="/WEB-INF/views/mainFooter.jsp" />
+  	</definition>
+	
+</tiles-definitions>

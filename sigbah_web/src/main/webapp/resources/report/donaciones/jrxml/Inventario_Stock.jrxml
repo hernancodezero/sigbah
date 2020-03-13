@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.0.final using JasperReports Library version 6.4.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Inventario_Stock" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="2c82441b-1dc7-44dd-9279-7ba0678158be">
+	<property name="ireport.zoom" value="0.75"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="P_LOGO_INDECI" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="P_NOMBRE_SISTEMA" class="java.lang.String"/>
+	<parameter name="D_CODIGO" class="java.lang.String"/>
+	<parameter name="D_CODIGO_SIGA" class="java.lang.String"/>
+	<parameter name="D_ESTADO" class="java.lang.String"/>
+	<parameter name="D_CATEGORIA" class="java.lang.String"/>
+	<parameter name="D_NOMBRE" class="java.lang.String"/>
+	<parameter name="D_UNIDAD_MEDIDA" class="java.lang.String"/>
+	<parameter name="D_TIPO_ENVASE" class="java.lang.String"/>
+	<parameter name="D_PESO_NETO" class="java.math.BigDecimal"/>
+	<parameter name="D_PESO_BRUTO" class="java.math.BigDecimal"/>
+	<parameter name="D_ENVASE_SEC" class="java.lang.String"/>
+	<parameter name="D_UNIDADES_SEC" class="java.math.BigDecimal"/>
+	<parameter name="D_DESCRIPCION_SEC" class="java.lang.String"/>
+	<parameter name="D_LARGO" class="java.math.BigDecimal"/>
+	<parameter name="D_ALTO" class="java.math.BigDecimal"/>
+	<parameter name="D_ANCHO" class="java.math.BigDecimal"/>
+	<parameter name="D_VOLUMEN" class="java.math.BigDecimal"/>
+	<parameter name="D_CANTIDAD" class="java.math.BigDecimal"/>
+	<parameter name="D_PRECIO" class="java.math.BigDecimal"/>
+	<parameter name="D_OBSERVACION" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="570">
+			<image>
+				<reportElement x="0" y="0" width="135" height="40" uuid="268d6387-6603-40fd-aa06-6e0e349dc25d"/>
+				<imageExpression><![CDATA[$P{P_LOGO_INDECI}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement mode="Opaque" x="146" y="47" width="234" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="c8b6cea0-8e4f-4990-8835-d5dec434c604"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DONACIONES]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="84" y="1" width="428" height="19" uuid="c29f23e2-a11a-4235-9d49-1e6d2c039d9b"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{P_NOMBRE_SISTEMA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="19" width="46" height="21" uuid="85ae10b6-e3b6-4ef8-96ee-2f96238950ff"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="HH:mm a">
+				<reportElement x="420" y="33" width="92" height="22" uuid="d42b8481-d826-40c5-a8eb-446f6d0ccfe9"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="420" y="19" width="92" height="21" uuid="0aade932-a36e-4fa3-a6b3-f0f8db413680"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="32" width="34" height="18" uuid="f5042480-628b-49fd-ab45-a4866c7db205"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Hora:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="91" width="510" height="1" uuid="6fb846bd-236b-44e6-9f73-735a21455260">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="97" width="512" height="15" backcolor="#E6E6E6" uuid="93035b55-8f9c-45ea-af82-642d965c1994">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Datos del Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="117" width="129" height="13" uuid="4a6d8f9a-6688-4e0d-aabe-1d00dd9b2989"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="117" width="100" height="13" uuid="24313269-9883-4a21-ae65-e62bd224871c">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código SIGA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="411" y="117" width="35" height="13" uuid="e3b4f18f-1208-4bdb-8afc-3d8ac2a9916b"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="137" width="129" height="13" uuid="21d74a58-b1a8-48df-9327-d0d883415148"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoría:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="156" width="129" height="13" uuid="8208e5c5-126f-4219-b09b-5480bcb3c77e"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidad de Medida:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="205" width="513" height="15" backcolor="#E6E6E6" uuid="f6055880-95a6-4c39-bbc2-c386511bde9f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Embalaje del Envase Secundario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="225" width="129" height="13" uuid="fde2b12b-eb48-4b2b-86dd-15c0a7932e8c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Envase:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="242" width="129" height="13" uuid="52328282-7539-442c-b5f9-cc96d46b7452">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° de Unidades por Envase:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="259" width="129" height="13" uuid="5bc0bb12-8130-4c24-8ee2-fb51aa940aa7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripción:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="117" width="92" height="13" uuid="b1e383f8-587b-4b2f-9a9b-1f62dfc3923f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="117" width="65" height="13" uuid="32c9ae61-7fb2-4195-bcf1-5f3230c5c8c8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_CODIGO_SIGA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="137" width="91" height="13" uuid="8a13c5e1-8e70-4b49-a20b-e2f8e598de39">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_CATEGORIA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="156" width="92" height="13" uuid="e026f05b-5088-4534-b428-cd3f351b36e3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_UNIDAD_MEDIDA}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="259" width="230" height="13" uuid="0ec91367-16dd-47b6-a077-8e1cd214e755">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_DESCRIPCION_SEC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="225" width="230" height="13" uuid="50b48e2e-f732-4413-82b3-0c19049e993f">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_ENVASE_SEC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="242" width="230" height="13" uuid="fea68048-2ba8-49c3-a292-252fcb5a66fa">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_UNIDADES_SEC}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="446" y="117" width="63" height="13" uuid="ced96384-aa10-4a2f-ac1b-53fd6037859d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_ESTADO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="63" y="67" width="391" height="19" forecolor="#000000" backcolor="#FFFFFF" uuid="9d6eb112-7f6b-4e1e-8145-d19230953db1"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FICHA DEL PRODUCTO EN STOCK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="137" width="100" height="13" uuid="c10175aa-3c45-4bda-a710-190c56e3d58f">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombre:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="228" y="156" width="100" height="13" uuid="13b5abf5-d4cd-4bd9-8ca7-9ac674774e9b"/>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo Envase:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="175" width="129" height="13" uuid="d91cf3c5-80e7-48d9-a7de-54ea85ba4f03">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso Unit. Neto Kg:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="175" width="92" height="13" uuid="59f6d35a-0c8f-4420-b454-21ab00b3dc55">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_PESO_NETO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="228" y="175" width="100" height="13" uuid="08ac15b8-73de-4a71-94ae-2d9a6d58b69b">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Peso Unit. Bruto Kg:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="-1" y="290" width="513" height="15" backcolor="#E6E6E6" uuid="736604dd-a6ed-45f5-abf2-3c8b5d9b1507">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dimensiones del Envase Secundario (metros)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="310" width="129" height="13" uuid="d6e97c2f-6b14-4663-a138-a7d9ddb46de6">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Largo:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="327" width="129" height="13" uuid="0429b590-8ede-45a3-b1e9-fd40590c011c">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Alto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="344" width="129" height="13" uuid="145ed40d-4867-493c-a056-b8a3aea390ac">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ancho:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="344" width="92" height="13" uuid="36ca731e-a628-40f3-bc56-8b912f0124a5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_ANCHO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="310" width="92" height="13" uuid="d147837b-18b2-4a41-a0cd-dd7a965c9086">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_LARGO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="132" y="327" width="92" height="13" uuid="bc25f0e3-e677-49ef-bf71-2bae5f39c0ab">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_ALTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="228" y="327" width="100" height="13" uuid="e329a9c5-7a04-47d1-a4af-f00ec54c5363">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Volumen Unitario (m³):]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="327" width="75" height="13" uuid="f677f0bf-a69a-4e66-896b-f0f43de14ad5">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_VOLUMEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="376" width="513" height="15" backcolor="#E6E6E6" uuid="88134f71-96fe-4019-82c7-5b3e4545bc6d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="396" width="129" height="13" uuid="317e0308-a046-40fd-9e95-874511906534">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cantidad:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="413" width="129" height="13" uuid="8e4d59ea-c05d-4af6-b838-fa726c836a52">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Precio Unitario:]]></text>
+			</staticText>
+			<textField pattern="###,###,###,##0" isBlankWhenNull="true">
+				<reportElement x="132" y="396" width="138" height="13" uuid="bb1df458-ddb8-4b3d-9c6d-60ea2053c6ba">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###,###,###,###.000000" isBlankWhenNull="true">
+				<reportElement x="132" y="413" width="138" height="13" uuid="e8f85b93-68e5-42cd-90df-24f9138ca01d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_PRECIO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="446" width="513" height="15" backcolor="#E6E6E6" uuid="30bec9cf-cbcc-4223-aff3-158a7f9dc567">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="466" width="117" height="13" uuid="687f7694-3dea-469a-902e-65a4ba0faeca">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="0" y="480" width="513" height="40" uuid="11d62872-463b-4c11-9912-03329c176f84">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_OBSERVACION}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="137" width="183" height="13" uuid="d88e10d5-30a5-44bd-919e-9885deb72b6d">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="156" width="90" height="13" uuid="b9142cf6-1b3c-410a-8524-af1421dbbec8">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_TIPO_ENVASE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="175" width="90" height="13" uuid="7c109fa3-f231-4f06-8e0a-732fa29dd7e1">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{D_PESO_BRUTO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>
