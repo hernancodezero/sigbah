@@ -628,7 +628,7 @@ public class DonacionesReporteController extends BaseController {
 	    			if (isEmpty(listaOrdenSalida)) {
 	    				return Constantes.COD_VALIDACION_GENERAL; // Sin registros asociados
 	    			}
-	    			wb = repo<rte.generaExcelReporteOrdenSalida(file_path.toString(), ordenSalidaBean, listaOrdenSalida);
+	    			wb = reporte.generaExcelReporteOrdenSalida(file_path.toString(), ordenSalidaBean, listaOrdenSalida);
 	    		} else { // Si incluye productos
 	    			file_name = "Reporte_Detalle_Orden_Salida";
 	    			ProductoSalidaBean productoSalidaBean = new ProductoSalidaBean();
